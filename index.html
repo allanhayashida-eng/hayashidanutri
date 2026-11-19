@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Didático: Incretinas e Medicamentos para Obesidade e Diabetes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-navy: #0a1929;
+    --bg-navy-2: #0f2744;
+    --bg-navy-3: #132f52;
+    --card-black: #030810;
+    --card-black-2: #0b1524;
+    --border-navy: #1a3a5c;
+    --border-navy-2: #24507a;
+    --text-light: #eaf1f8;
+    --text-soft: #c9d8e8;
+    --text-muted: #8ba3bd;
+    --accent-blue: #5dade2;
+    --accent-blue-soft: #7fc1ec;
+    --accent-green: #58d68d;
+    --accent-purple: #bb8fce;
+    --accent-orange: #f5b041;
+    --accent-red: #ec7063;
+    --radius: 18px;
+    --radius-sm: 12px;
+    --fonte: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --fonte-titulo: 'Fraunces', 'Inter', serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--fonte);
+    background:
+      radial-gradient(circle at 15% 0%, rgba(93, 173, 226, 0.10), transparent 40%),
+      radial-gradient(circle at 85% 100%, rgba(187, 143, 206, 0.08), transparent 45%),
+      linear-gradient(180deg, var(--bg-navy) 0%, #040a14 100%);
+    color: var(--text-light);
+    line-height: 1.7;
+    padding: 0 20px 70px;
+    max-width: 1220px;
+    margin: 0 auto;
+    min-height: 100vh;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- AVISO DE PROTEÇÃO ---------- */
+  .aviso-protecao {
+    max-width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 22px;
+    background: linear-gradient(90deg, rgba(236, 112, 99, 0.12), rgba(245, 176, 65, 0.10), rgba(236, 112, 99, 0.12));
+    border-bottom: 1px solid rgba(236, 112, 99, 0.45);
+    color: #f3c6c1;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .aviso-protecao svg {
+    color: var(--accent-red);
+    flex-shrink: 0;
+  }
+
+  .aviso-protecao.final {
+    border-bottom: none;
+    border-top: 1px solid rgba(236, 112, 99, 0.45);
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding: 16px 22px;
+  }
+
+  /* ---------- HEADER / HERO ---------- */
+  .hero {
+    text-align: center;
+    padding: 48px 10px 44px;
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 20px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+    border-radius: 2px;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    background: rgba(93, 173, 226, 0.08);
+    border: 1px solid rgba(93, 173, 226, 0.28);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+    margin-top: 16px;
+  }
+
+  h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-blue) 65%, var(--accent-purple) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .criador {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, rgba(93, 173, 226, 0.12), rgba(187, 143, 206, 0.08));
+    border: 1px solid rgba(93, 173, 226, 0.32);
+    border-radius: 999px;
+    font-size: 0.86rem;
+    color: var(--text-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .criador .rotulo {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+  }
+
+  .criador .nome {
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.3rem, 2vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 60px 0 22px;
+    padding-bottom: 14px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid rgba(36, 80, 122, 0.55);
+    position: relative;
+  }
+
+  h2::before {
+    content: "";
+    width: 6px;
+    height: 22px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+    flex-shrink: 0;
+    box-shadow: 0 0 18px rgba(93, 173, 226, 0.55);
+  }
+
+  /* ---------- CARDS GRID ---------- */
+  .grade-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 22px;
+  }
+
+  .card {
+    background: linear-gradient(160deg, var(--card-black-2) 0%, var(--card-black) 100%);
+    border-radius: var(--radius);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.03) inset,
+      0 10px 30px rgba(0, 0, 0, 0.55);
+    padding: 26px 24px 24px;
+    border: 1px solid var(--border-navy);
+    border-left: 4px solid var(--accent-blue);
+    transition: transform 0.28s cubic-bezier(.2,.8,.2,1), border-color 0.28s, box-shadow 0.28s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(93, 173, 226, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-navy-2);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.05) inset,
+      0 18px 42px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(93, 173, 226, 0.15);
+  }
+
+  .card h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card p {
+    font-size: 0.94rem;
+    margin-bottom: 10px;
+    color: var(--text-soft);
+    font-weight: 400;
+  }
+
+  .card strong { color: var(--text-light); font-weight: 600; }
+
+  .card ul {
+    padding-left: 18px;
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+  }
+
+  .card ul li {
+    margin-bottom: 8px;
+    color: var(--text-soft);
+    position: relative;
+  }
+
+  .card ul li::marker { color: var(--accent-blue); }
+
+  /* ---------- ANALOGY BOX ---------- */
+  .analogia {
+    display: block;
+    background: linear-gradient(135deg, rgba(15, 39, 68, 0.9), rgba(10, 25, 41, 0.9));
+    border-left: 3px solid var(--accent-blue);
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.87rem;
+    color: #d5e4f2;
+    margin-top: 14px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .analogia strong {
+    color: var(--accent-blue);
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- COLOR VARIANTS ---------- */
+  .card.fisiologia { border-left-color: var(--accent-green); }
+  .card.fisiologia h3 { color: var(--accent-green); }
+  .card.fisiologia::after { background: radial-gradient(circle, rgba(88, 214, 141, 0.10), transparent 70%); }
+  .card.fisiologia ul li::marker { color: var(--accent-green); }
+  .card.fisiologia .analogia { border-left-color: var(--accent-green); }
+  .card.fisiologia .analogia strong { color: var(--accent-green); }
+
+  .card.farmaco-unico { border-left-color: var(--accent-orange); }
+  .card.farmaco-unico h3 { color: var(--accent-orange); }
+  .card.farmaco-unico::after { background: radial-gradient(circle, rgba(245, 176, 65, 0.10), transparent 70%); }
+  .card.farmaco-unico ul li::marker { color: var(--accent-orange); }
+  .card.farmaco-unico .analogia { border-left-color: var(--accent-orange); }
+  .card.farmaco-unico .analogia strong { color: var(--accent-orange); }
+
+  .card.farmaco-duplo { border-left-color: var(--accent-purple); }
+  .card.farmaco-duplo h3 { color: var(--accent-purple); }
+  .card.farmaco-duplo::after { background: radial-gradient(circle, rgba(187, 143, 206, 0.10), transparent 70%); }
+  .card.farmaco-duplo ul li::marker { color: var(--accent-purple); }
+  .card.farmaco-duplo .analogia { border-left-color: var(--accent-purple); }
+  .card.farmaco-duplo .analogia strong { color: var(--accent-purple); }
+
+  .card.farmaco-triplo { border-left-color: var(--accent-red); }
+  .card.farmaco-triplo h3 { color: var(--accent-red); }
+  .card.farmaco-triplo::after { background: radial-gradient(circle, rgba(236, 112, 99, 0.10), transparent 70%); }
+  .card.farmaco-triplo ul li::marker { color: var(--accent-red); }
+  .card.farmaco-triplo .analogia { border-left-color: var(--accent-red); }
+  .card.farmaco-triplo .analogia strong { color: var(--accent-red); }
+
+  .card.diabetes-t1 { border-left-color: #e74c3c; }
+  .card.diabetes-t1 h3 { color: #e74c3c; }
+  .card.diabetes-t1::after { background: radial-gradient(circle, rgba(231, 76, 60, 0.10), transparent 70%); }
+  .card.diabetes-t1 ul li::marker { color: #e74c3c; }
+  .card.diabetes-t1 .analogia { border-left-color: #e74c3c; }
+  .card.diabetes-t1 .analogia strong { color: #e74c3c; }
+
+  .card.diabetes-t2 { border-left-color: #e67e22; }
+  .card.diabetes-t2 h3 { color: #e67e22; }
+  .card.diabetes-t2::after { background: radial-gradient(circle, rgba(230, 126, 34, 0.10), transparent 70%); }
+  .card.diabetes-t2 ul li::marker { color: #e67e22; }
+  .card.diabetes-t2 .analogia { border-left-color: #e67e22; }
+  .card.diabetes-t2 .analogia strong { color: #e67e22; }
+
+  .card.diabetes-lada { border-left-color: #9b59b6; }
+  .card.diabetes-lada h3 { color: #9b59b6; }
+  .card.diabetes-lada::after { background: radial-gradient(circle, rgba(155, 89, 182, 0.10), transparent 70%); }
+  .card.diabetes-lada ul li::marker { color: #9b59b6; }
+  .card.diabetes-lada .analogia { border-left-color: #9b59b6; }
+  .card.diabetes-lada .analogia strong { color: #9b59b6; }
+
+  /* ---------- CALCULADORA ---------- */
+  .calculadora-card {
+    background: linear-gradient(160deg, var(--card-black-2) 0%, var(--card-black) 100%);
+    border-radius: var(--radius);
+    border: 1px solid rgba(93, 173, 226, 0.40);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    padding: 30px 28px;
+    margin-bottom: 26px;
+  }
+
+  .calculadora-card .subtitulo-calc {
+    font-size: 0.90rem;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+    line-height: 1.6;
+  }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .calc-campo label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-blue-soft);
+    margin-bottom: 7px;
+  }
+
+  .calc-campo input {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-navy-2);
+    border: 1px solid var(--border-navy-2);
+    border-radius: var(--radius-sm);
+    color: var(--text-light);
+    font-family: var(--fonte);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .calc-campo input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.18);
+  }
+
+  .calc-campo input::placeholder { color: var(--text-muted); opacity: 0.6; }
+
+  .calc-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--accent-blue), #3a8fc7);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: #04121f;
+    font-family: var(--fonte);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  }
+
+  .calc-botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(93, 173, 226, 0.35);
+  }
+
+  .calc-botao:active { transform: translateY(0); opacity: 0.9; }
+
+  .calc-resultado {
+    display: none;
+    margin-top: 24px;
+    padding: 22px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-navy-2);
+    background: var(--bg-navy-2);
+    line-height: 1.7;
+  }
+
+  .calc-resultado.visivel { display: block; }
+
+  .calc-resultado .linha-resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(36, 80, 122, 0.45);
+    font-size: 0.92rem;
+    color: var(--text-soft);
+  }
+
+  .calc-resultado .linha-resultado:last-of-type { border-bottom: none; }
+
+  .calc-resultado .valor-resultado {
+    font-weight: 700;
+    color: var(--text-light);
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .calc-resultado .classificacao {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  .classificacao.baixo { background: rgba(88, 214, 141, 0.15); color: var(--accent-green); border: 1px solid rgba(88, 214, 141, 0.40); }
+  .classificacao.moderado { background: rgba(245, 176, 65, 0.15); color: var(--accent-orange); border: 1px solid rgba(245, 176, 65, 0.40); }
+  .classificacao.alto { background: rgba(236, 112, 99, 0.15); color: var(--accent-red); border: 1px solid rgba(236, 112, 99, 0.40); }
+
+  .calc-nota {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+    line-height: 1.55;
+    font-style: italic;
+  }
+
+  /* ---------- HIGHLIGHT ---------- */
+  .destaque {
+    background:
+      linear-gradient(135deg, rgba(93, 173, 226, 0.10), rgba(187, 143, 206, 0.05)),
+      var(--card-black-2);
+    border: 1px solid rgba(93, 173, 226, 0.35);
+    border-radius: var(--radius);
+    padding: 26px 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .destaque::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-red));
+  }
+
+  .destaque h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--accent-blue);
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .destaque p {
+    font-size: 0.98rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+
+  .destaque strong { color: var(--text-light); font-weight: 600; }
+
+  /* ---------- TABLE ---------- */
+  .comparativo {
+    background: linear-gradient(160deg, var(--card-black-2), var(--card-black));
+    border: 1px solid var(--border-navy);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    padding: 8px;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.92rem;
+  }
+
+  th, td {
+    padding: 16px 14px;
+    text-align: left;
+    vertical-align: top;
+    color: var(--text-soft);
+  }
+
+  th {
+    background: var(--bg-navy-3);
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-navy-2);
+  }
+
+  th:first-child { border-top-left-radius: var(--radius-sm); }
+  th:last-child { border-top-right-radius: var(--radius-sm); }
+
+  tbody tr { transition: background 0.2s ease; }
+  tbody tr:hover td { background: rgba(26, 58, 92, 0.28); }
+  tbody tr:not(:last-child) td { border-bottom: 1px solid rgba(26, 58, 92, 0.7); }
+
+  tbody td strong { color: var(--text-light); font-weight: 600; }
+
+  /* ---------- INSTAGRAM ---------- */
+  .instagram-card {
+    display: block;
+    background:
+      linear-gradient(135deg, rgba(93, 173, 226, 0.08), rgba(187, 143, 206, 0.06)),
+      var(--card-black-2);
+    border: 1px solid rgba(93, 173, 226, 0.35);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-top: 42px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: border-color 0.28s, transform 0.28s, box-shadow 0.28s;
+    text-decoration: none;
+    cursor: default;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+
+  .instagram-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(93, 173, 226, 0.25);
+  }
+
+  .instagram-card .conteudo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--text-light);
+    font-size: 1.18rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+  }
+
+  .instagram-card:hover .conteudo { color: var(--accent-blue); }
+
+  .instagram-card svg {
+    color: var(--accent-blue);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .instagram-card:hover svg { transform: scale(1.08) rotate(-4deg); }
+
+  .instagram-card .legenda {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 3px;
+    letter-spacing: 0.02em;
+  }
+
+  .instagram-card .url-visivel {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--accent-blue-soft);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  /* ---------- REFERENCES ---------- */
+  .referencias {
+    background: linear-gradient(160deg, var(--card-black-2), var(--card-black));
+    border: 1px solid var(--border-navy);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    padding: 28px 30px;
+    font-size: 0.88rem;
+    margin-top: 20px;
+  }
+
+  .referencias ol { padding-left: 22px; }
+  .referencias li {
+    margin-bottom: 14px;
+    color: var(--text-soft);
+    padding-left: 6px;
+    line-height: 1.65;
+  }
+  .referencias li::marker {
+    color: var(--accent-blue);
+    font-weight: 700;
+  }
+  .referencias strong { color: var(--text-light); font-weight: 600; }
+  .referencias em { color: var(--accent-blue-soft); font-style: italic; }
+  .referencias small {
+    color: var(--text-muted);
+    display: block;
+    margin-top: 5px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .nota {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 640px) {
+    body { padding: 0 14px 50px; }
+    .hero { padding-top: 32px; padding-bottom: 30px; }
+    .card { padding: 22px 18px; }
+    .referencias { padding: 22px 20px; }
+    th, td { padding: 12px 10px; font-size: 0.86rem; }
+    th { font-size: 0.74rem; }
+    .aviso-protecao { font-size: 0.68rem; letter-spacing: 0.12em; padding: 12px 14px; }
+    .calculadora-card { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="aviso-protecao">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+  </svg>
+  Proibido modificar este material
+</div>
+
+<div class="hero">
+  <span class="hero-eyebrow">Guia Científico · Nutrição</span>
+  <h1>Entendendo as Incretinas e os Novos Medicamentos</h1>
+  <p class="subtitulo">Guia resumido e didático para pacientes e estudantes • Linguagem simples, analogias e base científica</p>
+  <div class="criador">
+    <span class="rotulo">Criado por</span>
+    <span class="nome">Allan Hayashida</span>
+  </div>
+</div>
+
+<!-- ========== SEÇÃO 1: O BÁSICO ========== -->
+<h2>1. O Básico: Hormônios e o Pâncreas</h2>
+<div class="grade-cards">
+
+  <div class="card fisiologia">
+    <h3>🫁 Pâncreas</h3>
+    <p>O pâncreas é uma glândula de cerca de 15 cm localizada atrás do estômago. Ele tem <strong>duas funções</strong>:</p>
+    <ul>
+      <li><strong>Digestiva (exócrina):</strong> produz enzimas que quebram os alimentos.</li>
+      <li><strong>Hormonal (endócrina):</strong> produz <strong>insulina</strong> e <strong>glucagon</strong>, que controlam o açúcar no sangue.</li>
+    </ul>
+    <p>Dentro da parte hormonal, existem agrupamentos de células chamados <strong>Ilhotas de Langerhans</strong>. É lá que ficam as células beta (produzem insulina) e as células alfa (produzem glucagon).</p>
+    <span class="analogia"><strong>Analogia:</strong> imagine o pâncreas como uma fábrica com dois setores — um que ajuda na digestão e outro que controla o açúcar no sangue.</span>
+  </div>
+
+  <div class="card fisiologia">
+    <h3>💉 Insulina</h3>
+    <p>Produzida pelas <strong>células beta</strong> do pâncreas. É liberada quando o açúcar (glicose) sobe no sangue depois de comer.</p>
+    <ul>
+      <li>Funciona como uma <strong>chave</strong> que abre a porta das células para a glicose entrar e virar energia.</li>
+      <li>Sem insulina suficiente (ou quando ela não funciona bem, como no diabetes tipo 2), o açúcar fica preso no sangue — isso é a <strong>hiperglicemia</strong>.</li>
+    </ul>
+    <span class="analogia"><strong>Analogia:</strong> a insulina é a chave que abre a porta da célula para o açúcar entrar. Sem a chave, o açúcar fica do lado de fora (no sangue).</span>
+  </div>
+
+  <div class="card fisiologia">
+    <h3>🔥 Glucagon</h3>
+    <p>Produzido pelas <strong>células alfa</strong> do pâncreas. Age quando o açúcar no sangue está <strong>baixo</strong> (entre refeições ou durante o sono).</p>
+    <ul>
+      <li>Manda o fígado liberar o açúcar que estava guardado como reserva (glicogênio).</li>
+      <li>Também ajuda o corpo a produzir açúcar novo a partir de outras fontes.</li>
+    </ul>
+    <span class="analogia"><strong>Analogia:</strong> o glucagon é como um alarme de emergência que avisa o fígado: “Solte o estoque de açúcar, o corpo precisa de energia!”</span>
+  </div>
+
+  <div class="card fisiologia">
+    <h3>🥗 GIP</h3>
+    <p><strong>Polipeptídeo Insulinotrópico dependente de Glicose</strong> (também chamado de peptídeo inibidor gástrico). É produzido pelas <strong>células K</strong> do intestino delgado (duodeno e jejuno) quando você come.</p>
+    <ul>
+      <li>Viaja pelo sangue até o pâncreas e <strong>estimula a insulina</strong> — mas só quando o açúcar está alto (por isso “dependente de glicose”).</li>
+      <li>Também age no tecido adiposo (gordura) e pode estimular o glucagon em certas situações.</li>
+    </ul>
+    <span class="analogia"><strong>Analogia:</strong> o GIP é um mensageiro que sai do intestino e avisa ao pâncreas: “Chegou comida! Prepare a insulina!” — mas só entrega a mensagem se realmente tiver açúcar no sangue.</span>
+  </div>
+
+  <div class="card fisiologia">
+    <h3>🌿 GLP-1</h3>
+    <p><strong>Peptídeo Semelhante ao Glucagon-1</strong>. É produzido pelas <strong>células L</strong> do intestino (íleo e cólon) quando você come. Tem <strong>três ações principais</strong>:</p>
+    <ul>
+      <li>Estimula a insulina dependente de glicose.</li>
+      <li>Inibe o glucagon (para não liberar açúcar à toa).</li>
+      <li>Age no cérebro aumentando a <strong>saciedade</strong> e retardando o esvaziamento do estômago.</li>
+    </ul>
+    <p>O GLP-1 natural dura apenas 1–2 minutos no corpo (é destruído por uma enzima). Por isso os medicamentos são versões modificadas que duram muito mais.</p>
+    <span class="analogia"><strong>Analogia:</strong> o GLP-1 é um mensageiro que avisa: “Chegou comida! Libere insulina, pare o glucagon, avise o cérebro que já está satisfeito e segure a comida no estômago por mais tempo.”</span>
+  </div>
+
+  <div class="card fisiologia">
+    <h3>🧬 Incretinas</h3>
+    <p><strong>Incretinas</strong> são hormônios produzidos pelo <strong>intestino</strong> quando você come. Eles caem na corrente sanguínea e avisam o pâncreas para liberar insulina. Esse aviso intestinal é chamado de <strong>efeito incretina</strong> — é o motivo pelo qual a insulina sobe mais quando você come do que quando recebe glicose diretamente na veia.</p>
+    <ul>
+      <li>As duas incretinas principais são o <strong>GIP</strong> e o <strong>GLP-1</strong>.</li>
+      <li>Elas são destruídas rapidamente por uma enzima chamada <strong>DPP-4</strong> (duram poucos minutos).</li>
+      <li>Os medicamentos modernos (semaglutida, tirzepatida, retatrutida) são <strong>versões artificiais</strong> desses hormônios, modificadas para durar muito mais tempo no corpo.</li>
+    </ul>
+    <span class="analogia"><strong>Analogia:</strong> as incretinas são como “mensageiros” que saem do intestino após a refeição e entregam um recado ao pâncreas: “Chegou comida! Hora de liberar insulina.” Os remédios são cópias desses mensageiros que ficam trabalhando por muito mais tempo.</span>
+  </div>
+
+</div>
+
+<!-- ========== SEÇÃO 1.5: TIPOS DE DIABETES ========== -->
+<h2>1.5. Tipos de Diabetes</h2>
+<div class="grade-cards">
+
+  <div class="card diabetes-t1">
+    <h3>🔴 Diabetes Tipo 1</h3>
+    <p>Doença <strong>autoimune</strong>: o próprio sistema de defesa do corpo ataca e destrói as <strong>células beta</strong> do pâncreas, que produzem insulina.</p>
+    <ul>
+      <li>O corpo deixa de produzir insulina (ou produz muito pouca).</li>
+      <li>Geralmente aparece na infância, adolescência ou início da vida adulta.</li>
+      <li>O tratamento é sempre com <strong>insulina</strong> (injeções ou bomba).</li>
+      <li>Não está ligada a hábitos de vida — não é causada por comer doce.</li>
+    </ul>
+    <span class="analogia"><strong>Analogia:</strong> é como se a fábrica de insulina (as células beta) tivesse sido destruída por um "exército" do próprio corpo. Sem a fábrica, é preciso receber a insulina de fora, todos os dias.</span>
+  </div>
+
+  <div class="card diabetes-t2">
+    <h3>🟠 Diabetes Tipo 2</h3>
+    <p>É o tipo mais comum (cerca de 90% dos casos). O corpo <strong>ainda produz insulina</strong>, mas ela não funciona bem — as células se tornam "resistentes" à insulina (<strong>resistência insulínica</strong>).</p>
+    <ul>
+      <li>O pâncreas tenta compensar produzindo cada vez mais insulina, até se esgotar.</li>
+      <li>Está relacionado a fatores como excesso de peso, sedentarismo, alimentação inadequada e predisposição genética.</li>
+      <li>Pode ser controlado com <strong>mudanças de estilo de vida</strong>, remédios orais e, em alguns casos, insulina ou medicamentos injetáveis (como semaglutida e tirzepatida).</li>
+    </ul>
+    <span class="analogia"><strong>Analogia:</strong> é como uma chave (insulina) que já não abre mais a porta da célula direito — a fechadura "enferrujou". O pâncreas tenta fazer mais chaves, mas elas não funcionam bem. O objetivo do tratamento é "lubrificar" essa fechadura e aliviar o trabalho do pâncreas.</span>
+  </div>
+
+  <div class="card diabetes-lada">
+    <h3>🟣 Diabetes LADA</h3>
+    <p><strong>LADA</strong> significa <em>Latent Autoimmune Diabetes in Adults</em> — Diabetes Autoimune Latente do Adulto. Também é chamado de "Diabetes Tipo 1.5".</p>
+    <ul>
+      <li>É uma forma <strong>autoimune</strong> (como o tipo 1), mas de <strong>progressão lenta</strong>.</li>
+      <li>Aparece na vida adulta (geralmente após os 30 anos).</li>
+      <li>Por ser lento, é frequentemente confundido com o tipo 2 no início.</li>
+      <li>Com o tempo, o corpo perde a capacidade de produzir insulina e o tratamento passa a exigir <strong>insulina injetável</strong>.</li>
+    </ul>
+    <span class="analogia"><strong>Analogia:</strong> é como uma "destruição lenta" das células beta — o pâncreas vai parando de funcionar aos poucos, diferente do tipo 1, que é mais rápido. Por isso é chamado de "tipo 1.5".</span>
+  </div>
+
+</div>
+
+<!-- ========== SEÇÃO 2: MEDICAMENTOS ========== -->
+<h2>2. Os Medicamentos: Onde Cada Um Atua</h2>
+
+<div class="destaque">
+  <h3>🧠 Em poucas palavras (resumo para o paciente)</h3>
+  <p>Quando você come, seu intestino libera hormônios (<strong>GIP</strong> e <strong>GLP-1</strong>) que avisam o pâncreas para liberar insulina e avisam o cérebro que você está satisfeito. Os medicamentos modernos são <strong>versões artificiais desses hormônios</strong>, modificadas para durar muito mais tempo no corpo. Quanto mais hormônios o remédio imita, maior costuma ser o efeito na perda de peso — e também maior o risco de efeitos colaterais.</p>
+</div>
+
+<div class="grade-cards">
+
+  <div class="card farmaco-unico">
+    <h3>💊 Semaglutida</h3>
+    <p><strong>Classe:</strong> agonista único do receptor de GLP-1 (imita apenas o GLP-1).</p>
+    <p><strong>Onde atua:</strong> liga-se e ativa apenas o receptor de <strong>GLP-1</strong>, presente no pâncreas, cérebro, estômago e sistema cardiovascular.</p>
+    <p><strong>O que faz no corpo:</strong></p>
+    <ul>
+      <li>Aumenta a insulina quando o açúcar está alto.</li>
+      <li>Reduz o glucagon.</li>
+      <li>Retarda o esvaziamento gástrico (a comida fica mais tempo no estômago).</li>
+      <li>Aumenta a saciedade no cérebro (você sente menos fome).</li>
+    </ul>
+    <p><strong>Perda de peso média:</strong> cerca de 15% do peso corporal em estudos clínicos.</p>
+    <p><strong>Como é usado:</strong> injeção semanal (Ozempic, Wegovy) ou comprimido diário (Rybelsus).</p>
+    <span class="analogia"><strong>Analogia:</strong> é como contratar um “dublê” do GLP-1 que trabalha 24h por dia, 7 dias por semana.</span>
+  </div>
+
+  <div class="card farmaco-duplo">
+    <h3>💊 Tirzepatida (Mounjaro / Zepbound)</h3>
+    <p><strong>Classe:</strong> agonista duplo dos receptores de GIP e GLP-1 (imita dois hormônios ao mesmo tempo).</p>
+    <p><strong>Onde atua:</strong> ativa simultaneamente os receptores de <strong>GIP</strong> e de <strong>GLP-1</strong>.</p>
+    <p><strong>O que faz no corpo:</strong></p>
+    <ul>
+      <li>O GLP-1 controla apetite e insulina.</li>
+      <li>O GIP potencializa esses efeitos e ainda age no tecido adiposo (gordura).</li>
+      <li>Resultado: maior controle do açúcar e maior perda de peso do que só GLP-1.</li>
+    </ul>
+    <p><strong>Perda de peso média:</strong> cerca de 22,5% do peso corporal em estudos clínicos.</p>
+    <p><strong>Como é usado:</strong> injeção semanal (Mounjaro para diabetes, Zepbound para obesidade).</p>
+    <span class="analogia"><strong>Analogia:</strong> em vez de um dublê, agora são dois dublês trabalhando juntos — um cuida do apetite e da insulina, o outro potencializa o efeito.</span>
+  </div>
+
+  <div class="card farmaco-triplo">
+    <h3>💊 Retatrutida</h3>
+    <p><strong>Classe:</strong> agonista triplo dos receptores de GIP, GLP-1 e glucagon (imita três hormônios ao mesmo tempo).</p>
+    <p><strong>Onde atua:</strong> ativa os três receptores simultaneamente: <strong>GIP</strong>, <strong>GLP-1</strong> e <strong>glucagon</strong>.</p>
+    <p><strong>O que faz no corpo:</strong></p>
+    <ul>
+      <li>Do GLP-1: menos fome, mais insulina, menos glucagon.</li>
+      <li>Do GIP: potencializa o efeito metabólico.</li>
+      <li>Do glucagon: aumenta o <strong>gasto de energia</strong> (o corpo queima mais calorias mesmo em repouso — isso se chama termogênese).</li>
+    </ul>
+    <p><strong>Perda de peso média:</strong> cerca de 24% do peso corporal em estudos de fase 2.</p>
+    <p><strong>Status:</strong> ainda em estudos (fase 3), não disponível para venda. Pode causar mais náusea e efeitos gastrointestinais por causa do componente glucagon.</p>
+    <span class="analogia"><strong>Analogia:</strong> agora são três dublês trabalhando juntos — um cuida do apetite, outro da insulina, e o terceiro acelera o metabolismo como se o corpo estivesse fazendo exercício leve o tempo todo.</span>
+  </div>
+
+</div>
+
+<!-- ========== SEÇÃO 3: COMPARATIVO ========== -->
+<h2>3. Comparativo Rápido</h2>
+<div class="comparativo">
+  <table>
+    <thead>
+      <tr>
+        <th>Medicamento</th>
+        <th>Receptores ativados</th>
+        <th>Perda de peso aproximada</th>
+        <th>Princípio fisiológico principal</th>
+        <th>Disponibilidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Semaglutida</strong></td>
+        <td>GLP-1 (único)</td>
+        <td>~15%</td>
+        <td>Saciedade + insulina + inibição do glucagon</td>
+        <td>Aprovado</td>
+      </tr>
+      <tr>
+        <td><strong>Tirzepatida</strong></td>
+        <td>GIP + GLP-1 (duplo)</td>
+        <td>~22,5%</td>
+        <td>Sinergia incretina: maior efeito metabólico</td>
+        <td>Aprovado</td>
+      </tr>
+      <tr>
+        <td><strong>Retatrutida</strong></td>
+        <td>GIP + GLP-1 + glucagon (triplo)</td>
+        <td>~24%</td>
+        <td>Sinergia + aumento do gasto energético (glucagon)</td>
+        <td>Em fase 3 (investigacional)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="nota">Valores aproximados com base em estudos clínicos e meta-análises; a resposta individual varia.</p>
+</div>
+
+<!-- ========== SEÇÃO 4: CALCULADORA DE IMC ========== -->
+<h2>4. Calculadora de IMC (Índice de Massa Corporal)</h2>
+
+<div class="calculadora-card">
+  <p class="subtitulo-calc">
+    O IMC é a razão entre o peso (em kg) e o quadrado da altura (em metros) — fórmula de Quetelet, usada pela Organização Mundial da Saúde (OMS) para classificar o estado nutricional em adultos. Os resultados são orientativos e <strong>não substituem avaliação médica ou nutricional</strong>.
+  </p>
+
+  <div class="calc-grid">
+    <div class="calc-campo">
+      <label for="peso">Peso (kg)</label>
+      <input type="number" id="peso" placeholder="Ex.: 72.5" min="20" max="300" step="0.1">
+    </div>
+    <div class="calc-campo">
+      <label for="altura">Altura (m)</label>
+      <input type="number" id="altura" placeholder="Ex.: 1.75" min="1.0" max="2.5" step="0.01">
+    </div>
+  </div>
+
+  <button type="button" class="calc-botao" onclick="calcularIMC()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="2" x2="12" y2="22"></line>
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+    </svg>
+    Calcular IMC
+  </button>
+
+  <div class="calc-resultado" id="resultado-imc">
+    <div class="linha-resultado">
+      <span>Seu IMC</span>
+      <span class="valor-resultado" id="res-imc-valor">—</span>
+    </div>
+    <div class="linha-resultado">
+      <span>Classificação (OMS)</span>
+      <span class="valor-resultado" id="res-imc-classificacao">—</span>
+    </div>
+    <div class="linha-resultado">
+      <span>Faixa de peso correspondente</span>
+      <span class="valor-resultado" id="res-imc-faixa">—</span>
+    </div>
+    <div class="classificacao" id="res-imc-alerta">—</div>
+  </div>
+
+  <p class="calc-nota">
+    Referências: fórmula de Quetelet (peso/altura²); pontos de corte da Organização Mundial da Saúde (OMS) para adultos: &lt;18,5 abaixo do peso; 18,5–24,9 peso normal; 25,0–29,9 sobrepeso; ≥30,0 obesidade (Classe I: 30,0–34,9; Classe II: 35,0–39,9; Classe III: ≥40,0). Para populações asiáticas, a OMS sugere pontos de ação adicionais (23,0 e 27,5 kg/m²).
+  </p>
+</div>
+
+<!-- ========== SEÇÃO 5: CALCULADORA DE RISCO DE DIABETES ========== -->
+<h2>5. Calculadora de Risco de Diabetes</h2>
+
+<div class="calculadora-card">
+  <p class="subtitulo-calc">
+    Ferramenta educativa baseada em biomarcadores validados na literatura (glicemia de jejum, HbA1c e insulina de jejum/HOMA-IR). Os resultados são orientativos e <strong>não substituem avaliação médica</strong>.
+  </p>
+
+  <div class="calc-grid">
+    <div class="calc-campo">
+      <label for="glicemia">Glicemia de jejum (mg/dL)</label>
+      <input type="number" id="glicemia" placeholder="Ex.: 95" min="40" max="400" step="1">
+    </div>
+    <div class="calc-campo">
+      <label for="hba1c">Hemoglobina glicada — HbA1c (%)</label>
+      <input type="number" id="hba1c" placeholder="Ex.: 5.4" min="3" max="15" step="0.1">
+    </div>
+    <div class="calc-campo">
+      <label for="insulina">Insulina de jejum (µIU/mL)</label>
+      <input type="number" id="insulina" placeholder="Ex.: 8.0" min="0.1" max="200" step="0.1">
+    </div>
+  </div>
+
+  <button type="button" class="calc-botao" onclick="calcularRisco()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg>
+    Calcular risco
+  </button>
+
+  <div class="calc-resultado" id="resultado">
+    <div class="linha-resultado">
+      <span>HOMA-IR (resistência insulínica)</span>
+      <span class="valor-resultado" id="res-homa">—</span>
+    </div>
+    <div class="linha-resultado">
+      <span>Classificação da glicemia de jejum</span>
+      <span class="valor-resultado" id="res-glicemia">—</span>
+    </div>
+    <div class="linha-resultado">
+      <span>Classificação da HbA1c</span>
+      <span class="valor-resultado" id="res-hba1c">—</span>
+    </div>
+    <div class="linha-resultado">
+      <span>Classificação do HOMA-IR</span>
+      <span class="valor-resultado" id="res-homa-class">—</span>
+    </div>
+    <div class="classificacao" id="res-classificacao">—</div>
+  </div>
+
+  <p class="calc-nota">
+    Referências: modelo BrDMrisc (Bracco et al., <em>Rev Saúde Pública</em>, 2026; PMID 41538556) para risco de diabetes tipo 2 em 10 anos; HOMA-IR conforme modelo de Matthews et al.; pontos de corte da American Diabetes Association (ADA). Esta calculadora é uma adaptação educativa e não reproduz integralmente o BrDMrisc.
+  </p>
+</div>
+
+<!-- ========== INSTAGRAM ========== -->
+<div class="instagram-card">
+  <span class="conteudo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+    <span>
+      @hayashidanutri
+      <span class="legenda">Instagram</span>
+    </span>
+  </span>
+  <span class="url-visivel">instagram.com/hayashidanutri</span>
+</div>
+
+<!-- ========== SEÇÃO 6: REFERÊNCIAS ========== -->
+<h2>6. Referências (5 Artigos-Chave)</h2>
+<div class="referencias">
+  <ol>
+    <li>
+      <strong>Yan, K., Yu, H., & Blaise, B. (2025).</strong> Beyond GLP-1: efficacy and safety of dual and triple incretin agonists in personalized type 2 diabetes care—a systematic review and network meta-analysis. <em>Acta Diabetologica</em>.
+      <small>Compara agonistas duplos e triplos; mostra que a retatrutida teve a maior redução de peso e a tirzepatida o melhor controle glicêmico.</small>
+    </li>
+    <li>
+      <strong>Cell Discovery (2024).</strong> Structural insights into the triple agonism at GLP-1R, GIPR and GCGR manifested by retatrutide. <em>Nature</em>.
+      <small>Detalha como a retatrutida ativa os três receptores e por que isso aumenta o gasto energético.</small>
+    </li>
+    <li>
+      <strong>ScienceDirect (2026).</strong> Revolutionizing obesity treatment: The emerging role of GLP-1 receptor agonists and next-generation pharmacotherapies.
+      <small>Revisão que resume as perdas de peso: semaglutida 14,9%, tirzepatida 22,5% e retatrutida 24%.</small>
+    </li>
+    <li>
+      <strong>Sinha, B., & Ghosal, S. (2025).</strong> Efficacy and Safety of GLP-1 Receptor Agonists, Dual Agonists, and Retatrutide for Weight Loss in Adults With Overweight or Obesity: A Bayesian NMA. <em>Obesity</em>, 33(11), 2046–2054.
+      <small>Meta-análise em rede: retatrutida e agonistas duplos superam GLP-1 isolado em perda de peso, com maior risco de eventos adversos para retatrutida.</small>
+    </li>
+    <li>
+      <strong>Metabolism (2024).</strong> Seven glucagon-like peptide-1 receptor agonists and polyagonists for weight loss in patients with obesity or overweight: an updated systematic review and network meta-analysis. <em>Metabolism</em>, 161, 156038.
+      <small>Confirma que retatrutida e tirzepatida têm eficácia superior em perda de peso em comparação aos agonistas GLP-1 tradicionais.</small>
+    </li>
+  </ol>
+</div>
+
+<div class="aviso-protecao final">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+  </svg>
+  Proibido modificar este material
+</div>
+
+<script>
+function calcularIMC() {
+  const peso = parseFloat(document.getElementById('peso').value);
+  const altura = parseFloat(document.getElementById('altura').value);
+
+  const resultadoDiv = document.getElementById('resultado-imc');
+
+  if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+    alert('Por favor, preencha peso e altura com valores numéricos válidos.');
+    return;
+  }
+
+  const imc = peso / (altura * altura);
+
+  let classificacao;
+  let alerta;
+  let alertaClasse;
+
+  if (imc < 18.5) {
+    classificacao = 'Abaixo do peso';
+    alerta = 'Abaixo do peso — procure avaliação nutricional para investigar causas e ajustar a alimentação.';
+    alertaClasse = 'moderado';
+  } else if (imc < 25.0) {
+    classificacao = 'Peso normal';
+    alerta = 'Peso normal — mantenha hábitos saudáveis e reavalie periodicamente.';
+    alertaClasse = 'baixo';
+  } else if (imc < 30.0) {
+    classificacao = 'Sobrepeso';
+    alerta = 'Sobrepeso — atenção aos hábitos de vida; considere acompanhamento nutricional.';
+    alertaClasse = 'moderado';
+  } else if (imc < 35.0) {
+    classificacao = 'Obesidade Classe I';
+    alerta = 'Obesidade Classe I — risco aumentado de complicações metabólicas. Procure avaliação médica e nutricional.';
+    alertaClasse = 'alto';
+  } else if (imc < 40.0) {
+    classificacao = 'Obesidade Classe II';
+    alerta = 'Obesidade Classe II — risco elevado de complicações. Acompanhamento especializado é recomendado.';
+    alertaClasse = 'alto';
+  } else {
+    classificacao = 'Obesidade Classe III';
+    alerta = 'Obesidade Classe III — risco muito elevado. Procure acompanhamento médico e nutricional especializado.';
+    alertaClasse = 'alto';
+  }
+
+  const pesoMinNormal = 18.5 * altura * altura;
+  const pesoMaxNormal = 24.9 * altura * altura;
+  const faixa = `Para essa altura, o peso na faixa de IMC normal (18,5–24,9) seria entre ${pesoMinNormal.toFixed(1)} kg e ${pesoMaxNormal.toFixed(1)} kg.`;
+
+  document.getElementById('res-imc-valor').textContent = imc.toFixed(1).replace('.', ',');
+  document.getElementById('res-imc-classificacao').textContent = classificacao;
+  document.getElementById('res-imc-faixa').textContent = faixa;
+
+  const alertaDiv = document.getElementById('res-imc-alerta');
+  alertaDiv.textContent = alerta;
+  alertaDiv.className = 'classificacao ' + alertaClasse;
+
+  resultadoDiv.classList.add('visivel');
+}
+
+function calcularRisco() {
+  const glicemia = parseFloat(document.getElementById('glicemia').value);
+  const hba1c = parseFloat(document.getElementById('hba1c').value);
+  const insulina = parseFloat(document.getElementById('insulina').value);
+
+  const resultadoDiv = document.getElementById('resultado');
+
+  if (isNaN(glicemia) || isNaN(hba1c) || isNaN(insulina)) {
+    alert('Por favor, preencha os três campos com valores numéricos.');
+    return;
+  }
+
+  const homaIR = (glicemia * insulina) / 405;
+
+  let glicemiaClass;
+  if (glicemia < 100) glicemiaClass = 'Normal (<100 mg/dL)';
+  else if (glicemia < 126) glicemiaClass = 'Pré-diabetes (100–125 mg/dL)';
+  else glicemiaClass = 'Diabetes (≥126 mg/dL)';
+
+  let hba1cClass;
+  if (hba1c < 5.7) hba1cClass = 'Normal (<5,7%)';
+  else if (hba1c < 6.5) hba1cClass = 'Pré-diabetes (5,7–6,4%)';
+  else hba1cClass = 'Diabetes (≥6,5%)';
+
+  let homaClass;
+  if (homaIR < 2.0) homaClass = 'Sensível à insulina (<2,0)';
+  else if (homaIR <= 2.7) homaClass = 'Resistência limítrofe (2,0–2,7)';
+  else homaClass = 'Resistência insulínica (>2,7)';
+
+  let risco;
+  let riscoClasse;
+
+  if (glicemia >= 126 || hba1c >= 6.5) {
+    risco = 'ALTO — critérios de diabetes presentes. Procure avaliação médica.';
+    riscoClasse = 'alto';
+  } else if (glicemia >= 100 || hba1c >= 5.7 || homaIR > 2.7) {
+    risco = 'MODERADO — sinais de pré-diabetes ou resistência insulínica. Merece acompanhamento.';
+    riscoClasse = 'moderado';
+  } else {
+    risco = 'BAIXO — biomarcadores dentro da faixa de normalidade. Mantenha hábitos saudáveis e reavalie periodicamente.';
+    riscoClasse = 'baixo';
+  }
+
+  document.getElementById('res-homa').textContent = homaIR.toFixed(2).replace('.', ',');
+  document.getElementById('res-glicemia').textContent = glicemiaClass;
+  document.getElementById('res-hba1c').textContent = hba1cClass;
+  document.getElementById('res-homa-class').textContent = homaClass;
+
+  const classDiv = document.getElementById('res-classificacao');
+  classDiv.textContent = risco;
+  classDiv.className = 'classificacao ' + riscoClasse;
+
+  resultadoDiv.classList.add('visivel');
+}
+</script>
+
+</body>
+</html>
